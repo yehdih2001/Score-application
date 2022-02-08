@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20220208003828",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "player",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateOfBirth",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Player",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "team",
+      "otherEntityRelationshipName": "player",
+      "relationshipName": "actualTeam",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

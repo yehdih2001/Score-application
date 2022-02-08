@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="player">
+      <h2 data-cy="playerDetailsHeading"><span jhiTranslate="scoreApp.player.detail.title">Player</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ player.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="scoreApp.player.name">Name</span></dt>
+        <dd>
+          <span>{{ player.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="scoreApp.player.dateOfBirth">Date Of Birth</span></dt>
+        <dd>
+          <span>{{ player.dateOfBirth | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="scoreApp.player.actualTeam">Actual Team</span></dt>
+        <dd>
+          <div *ngIf="player.actualTeam">
+            <a [routerLink]="['/team', player.actualTeam?.id, 'view']">{{ player.actualTeam?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/player', player.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

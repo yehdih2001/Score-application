@@ -1,7 +1,7 @@
 
 entity Team {
 	name String,
-    picture Image
+    picture ImageBlob
 }
 
 entity Player {
@@ -25,7 +25,10 @@ paginate Player with pagination
 // dto * with mapstruct
 
 // Set service options to all except few
-service all with serviceImpl except Team, Player
+service all with serviceImpl
+
+// Set an angular suffix
+angularSuffix * with mySuffix
 
 // Set an angular suffix
 // angularSuffix * with mySuffix

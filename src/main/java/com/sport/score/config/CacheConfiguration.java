@@ -81,6 +81,8 @@ public class CacheConfiguration {
             createCache(cm, com.sport.score.domain.User.class.getName(), jcacheConfiguration);
             createCache(cm, com.sport.score.domain.Authority.class.getName(), jcacheConfiguration);
             createCache(cm, com.sport.score.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            createCache(cm, com.sport.score.domain.Team.class.getName(), jcacheConfiguration);
+            createCache(cm, com.sport.score.domain.Player.class.getName(), jcacheConfiguration);
             // jhipster-needle-redis-add-entry
         };
     }
